@@ -1,0 +1,210 @@
+/* Reset body margins and make sure everything fills the screen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Dark background similar to the dark tones in the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+/* Main container now spans the entire screen */
+.main-box {
+    background: radial-gradient(circle, #878b4b, #6cac4f); /* Soft purple and pink gradient for a modern feel */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding decorative animated floating circles */
+.main-box::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: -150px;
+    left: -150px;
+    animation: float 10s infinite ease-in-out;
+}
+
+.main-box::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+    animation: float 15s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+/* New header style to make it more dramatic */
+h1 {
+    font-size: 5rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #ffffff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Centering buttons vertically */
+.buttons-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Buttons are now bigger, rounder, and more prominent */
+.word-btn {
+    background-color: #3c4442; /* Light coral for buttons */
+    color: #fff;
+    border: none;
+    padding: 20px; /* Adjust padding to fit the circular shape */
+    font-size: 1.2rem; /* Reduce font size slightly for better fit */
+    border-radius: 50%; /* Makes the button circular */
+    width: 200px; /* Set fixed width */
+    height: 200px; /* Set fixed height */
+    text-align: center; /* Center the text horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word; /* Handle longer words */
+}
+
+
+.word-btn::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+
+.word-btn:hover::before {
+    top: -20px;
+    left: -20px;
+    width: 200px;
+    height: 200px;
+}
+
+
+.word-btn:hover {
+    background-color: #4a5f69; /* Darker coral for hover effect */
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure that text inside the button is centered */
+.word-btn span {
+    text-align: center; /* Keep text centered */
+    display: block;
+    line-height: 1.2; /* Adjust line height for multiple lines */
+}
+
+/* Story display becomes more prominent with a distinct design */
+.story-display {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    padding: 20px;
+    border: 3px dashed #e4e4e4; /* Soft pink border */
+    min-height: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* New button style for action buttons */
+.action-btn {
+    background-color: #dfc327; /* Dark purple for action buttons */
+    color: #ffffff;
+    border: none;
+    padding: 20px 60px;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.action-btn:hover::before {
+    top: -20px;
+    left: -20px;
+    width: 200px;
+    height: 200px;
+}
+
+.action-btn:hover {
+    background-color: #52552a; /* Pink for hover */
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
